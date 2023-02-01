@@ -41,5 +41,16 @@ void fill_map(std::map<char, int>& list, std::string& word)
 
 bool comparison(std::map<char, int>& fList, std::map<char, int>& sList)
 {
-
+    std::map<char, int>::iterator itf, its;
+    itf = fList.begin();
+    its = sList.begin();
+    for (; itf != fList.end(); ++itf)
+    {
+        if (itf->first != its->first)
+        {
+            return false;
+        }
+        ++its;
+    }
+    return true;
 }
